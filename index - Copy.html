@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hetvi Sarvaiya | Cybersecurity Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+/* =======================
+ CYBER THEME
+======================= */
+/* =======================
+ MODAL POPUP
+======================= */
+
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:2000;
+}
+
+.modal-box{
+background:rgba(20,20,40,0.95);
+padding:35px;
+border-radius:18px;
+width:90%;
+max-width:450px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.modal-box h2{
+margin-bottom:20px;
+}
+
+.modal-box p{
+color:var(--muted);
+margin:8px 0;
+}
+
+.close-btn{
+position:absolute;
+top:15px;
+right:20px;
+font-size:26px;
+color:white;
+cursor:pointer;
+}
+
+
+
+:root{
+--bg:#05060A;
+--card:rgba(20,20,40,0.75);
+--purple:#8B5CF6;
+--pink:#EC4899;
+--cyan:#22D3EE;
+--text:#E5E7EB;
+--muted:#9CA3AF;
+--border:rgba(255,255,255,0.08);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+scroll-behavior:smooth;
+}
+
+/* =======================
+ NAVBAR
+======================= */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+padding:16px 8%;
+background:rgba(5,6,10,0.85);
+backdrop-filter:blur(10px);
+display:flex;
+align-items:center;
+justify-content:space-between;
+z-index:1000;
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.nav-center{
+display:flex;
+gap:30px;
+list-style:none;
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+}
+
+.nav-center a{
+color:var(--text);
+text-decoration:none;
+font-weight:500;
+}
+
+.nav-center a:hover{color:var(--cyan);}
+
+.nav-btn{
+padding:10px 22px;
+border-radius:30px;
+background:linear-gradient(90deg,var(--purple),var(--pink));
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+/* =======================
+ HERO
+======================= */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 8% 80px;
+gap:40px;
+}
+
+.hero-left{
+width:50%;
+}
+
+.hero-left h1{
+font-size:52px;
+margin-bottom:10px;
+}
+
+.hero-left span{
+background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-left h3{
+color:var(--cyan);
+margin-bottom:15px;
+height:28px;
+}
+
+.hero-left p{
+color:var(--muted);
+max-width:520px;
+margin-bottom:30px;
+}
+
+/* RIGHT SIDE VIDEO */
+.hero-right{
+width:45%;
+display:flex;
+justify-content:center;
+}
+
+.hero-video{
+width:380px;
+height:380px;
+border-radius:50%;
+object-fit:cover;
+
+mix-blend-mode:lighten;
+opacity:0.85;
+
+/* soft fade edges */
+mask-image:radial-gradient(circle, white 60%, transparent 75%);
+-webkit-mask-image:radial-gradient(circle, white 60%, transparent 75%);
+
+/* subtle glow only */
+filter:drop-shadow(0 0 25px rgba(139,92,246,0.35));
+
+animation:pulse 4s ease-in-out infinite alternate;
+}
+
+
+@keyframes pulse{
+from{transform:scale(1);}
+to{transform:scale(1.05);}
+}
+
+/* BUTTON */
+
+.btn{
+padding:14px 34px;
+border-radius:40px;
+border:none;
+font-weight:600;
+cursor:pointer;
+background:linear-gradient(90deg,var(--purple),var(--pink));
+color:white;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px var(--purple);
+}
+
+/* =======================
+ SECTIONS
+======================= */
+
+section{padding:90px 8%;}
+
+h2{
+text-align:center;
+font-size:38px;
+margin-bottom:50px;
+background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:22px;
+}
+
+.card{
+background:var(--card);
+padding:22px;
+border-radius:14px;
+border:1px solid var(--border);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+.hero{
+flex-direction:column;
+text-align:center;
+}
+.hero-left,.hero-right{
+width:100%;
+}
+.hero-video{
+width:300px;
+height:300px;
+}
+}
+
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid var(--border);
+}
+/* =========================
+ SCROLL ONLY ANIMATION
+========================= */
+
+.reveal,
+.reveal-left,
+.reveal-right{
+opacity:0;
+transition:1s ease;
+}
+
+/* bottom */
+.reveal{
+transform:translateY(80px);
+}
+
+/* left */
+.reveal-left{
+transform:translateX(-100px);
+}
+
+/* right */
+.reveal-right{
+transform:translateX(100px);
+}
+
+/* when visible */
+.show{
+opacity:1;
+transform:translate(0,0);
+}
+
+
+</style>
+</head>
+
+<body>
+
+  <!-- ABOUT MODAL -->
+<div id="aboutModal" class="modal">
+
+  <div class="modal-box">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+
+    <h2>About Me</h2>
+
+    <p><b>Name:</b> Hetvi Sarvaiya</p>
+    <p><b>Age:</b> 18</p>
+    <p><b>Email:</b> hetvi0217@gmail.com</p>
+    <p><b>Phone:</b> +91 8460505471</p>
+
+    <br>
+
+    <a href="resume.pdf" class="btn">Download CV</a>
+
+  </div>
+
+</div>
+
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+<div class="logo">HETVI SARVAIYA</div>
+
+<ul class="nav-center">
+<li><a href="#home">Home</a></li>
+<li><a href="#about-big">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#roadmap">Roadmap</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<a href="resume.pdf" class="nav-btn">Download CV</a>
+
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+<!-- LEFT -->
+<div class="hero-left">
+
+<h1>Hello, I'm <span>Hetvi Sarvaiya</span></h1>
+<h3 id="typing"></h3>
+
+<p>
+Cybersecurity learner with strong interest in network security and system administration.
+Building hands-on skills in Windows Server, Active Directory, and network infrastructure.
+Focused on defending, detecting, and preventing cyber threats.
+Driven by continuous learning and practical lab experience.
+</p>
+
+<button class="btn" onclick="openModal()">Know About Me</button>
+<div class="social-links">
+  
+  <a href="https://github.com/yourusername" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/yourusername" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+
+  <a href="https://tryhackme.com/p/yourusername" target="_blank">
+    <i class="fas fa-user-secret"></i>
+  </a>
+
+</div>
+
+<style>/* =======================
+ SOCIAL ICONS
+======================= */
+
+/* =======================
+ SOCIAL ICONS
+======================= */
+.btn{
+padding:14px 34px;
+border-radius:10px;   /* square style */
+border:none;
+font-weight:600;
+cursor:pointer;
+background:linear-gradient(90deg,var(--purple),var(--pink));
+color:white;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.06);
+box-shadow:0 0 22px var(--purple);
+}
+
+.social-links{
+display:flex;
+gap:18px;
+margin-top:20px;      /* space from Know About Me button */
+margin-bottom:28px;
+}
+
+
+.social-links a{
+width:44px;
+height:44px;
+border-radius:10px;   /* square with soft corner */
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(20,20,40,0.75);
+border:1px solid rgba(255,255,255,0.08);
+color:var(--cyan);
+font-size:20px;
+transition:0.35s ease;
+text-decoration:none;
+}
+
+/* Hover Glow */
+.social-links a:hover{
+color:#fff;
+background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));
+box-shadow:0 0 22px rgba(139,92,246,0.7);
+transform:translateY(-3px) scale(1.08);
+}
+
+</style>
+</div>
+
+<!-- RIGHT -->
+<div class="hero-right">
+
+<video class="hero-video" autoplay muted loop playsinline>
+<source src="asset-63e44766.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ABOUT ME BIG SECTION -->
+<section id="about-big" class="about-section about-reveal">
+
+<span class="tag">About Me</span>
+
+<h2>Building Strong Foundations in Cybersecurity & System Administration</h2>
+
+<p class="about-desc">
+Aspiring cybersecurity professional passionate about defending digital systems,
+building strong infrastructure, and continuously improving skills through hands-on labs
+and real-world practice.
+</p>
+
+<div class="about-cards">
+
+<!-- CARD 1 -->
+<div class="about-flip reveal">
+  <div class="about-inner">
+
+    <div class="about-front">
+      <h3>Why I Choose Cybersecurity?</h3>
+    </div>
+
+    <div class="about-back">
+      <p>
+I enjoy understanding how attacks happen and how to prevent them.
+Cybersecurity gives me the power to protect systems and people.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- CARD 2 -->
+<div class="about-flip reveal">
+  <div class="about-inner">
+
+    <div class="about-front">
+      <h3>Why I Prefer This Field?</h3>
+    </div>
+
+    <div class="about-back">
+      <p>
+I like continuous learning, problem solving, and working with networks,
+servers, and security tools.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- CARD 3 -->
+<div class="about-flip reveal">
+  <div class="about-inner">
+
+    <div class="about-front">
+      <h3>My Strengths</h3>
+    </div>
+
+    <div class="about-back">
+      <p>
+Hardworking, curious learner, good at troubleshooting,
+and strong interest in defensive security.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+</div>
+</section>
+<style>/* ABOUT BIG SECTION */
+
+.tag{
+display:inline-block;
+padding:6px 18px;
+border-radius:20px;
+background:rgba(139,92,246,0.2);
+color:#c4b5fd;
+margin-bottom:15px;
+}
+
+.about-desc{
+max-width:650px;
+margin:20px auto 60px;
+color:var(--muted);
+font-size:17px;
+line-height:1.6;
+}
+
+.about-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+position:relative;
+z-index:2;
+}
+
+.about-card{
+background:rgba(20,20,40,0.7);
+padding:25px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+transition:0.3s;
+}
+
+.about-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px rgba(139,92,246,0.4);
+}
+
+.about-card h3{
+margin-bottom:10px;
+color:#e9d5ff;
+}
+
+/* GLOWING ORB */
+/* =========================
+   ABOUT CINEMATIC FLIP
+========================= */
+
+.about-section{
+padding:110px 8%;
+text-align:center;
+}
+
+.about-desc{
+max-width:720px;
+margin:25px auto 70px;
+font-size:17px;
+line-height:1.8;
+color:var(--muted);
+}
+
+/* GRID */
+.about-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
+max-width:900px;
+margin:auto;
+}
+
+/* FLIP CARD */
+.about-flip{
+width:100%;
+height:260px;
+perspective:1000px;
+}
+
+.about-inner{
+width:100%;
+height:100%;
+position:relative;
+transform-style:preserve-3d;
+transition:0.9s ease;
+}
+
+/* hover flip */
+.about-flip:hover .about-inner{
+transform:rotateY(180deg);
+}
+
+/* faces */
+.about-front,
+.about-back{
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:30px;
+backface-visibility:hidden;
+background:rgba(20,20,40,0.7);
+border-radius:14px;
+}
+
+/* FRONT */
+.about-front h3{
+font-size:22px;
+color:#ffffff;
+text-align:center;
+}
+
+/* BACK */
+.about-back{
+transform:rotateY(180deg);
+}
+
+.about-back p{
+color:#d1d5db;
+font-size:15px;
+line-height:1.6;
+text-align:center;
+}
+
+/* SCROLL ANIMATION */
+.reveal{
+opacity:0;
+transform:translateY(80px);
+transition:1s ease;
+}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}
+/* ==========================
+   LUXURY ABOUT SECTION LOAD
+========================== */
+
+.about-reveal{
+opacity:0;
+transform:translateY(120px) scale(0.95);
+transition:1.5s ease;
+}
+
+.about-reveal.show{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+/* Luxury glow heading */
+.about-section h2{
+font-size:40px;
+letter-spacing:1px;
+background:linear-gradient(90deg,#22D3EE,#8B5CF6,#EC4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 30px rgba(139,92,246,0.4);
+}
+
+/* Softer premium paragraph */
+.about-desc{
+color:#cbd5f5;
+font-size:18px;
+line-height:1.9;
+}
+
+/* Luxury cards feel */
+.about-front,
+.about-back{
+background:rgba(25,25,45,0.75);
+backdrop-filter:blur(8px);
+}
+
+</style>
+
+<script>
+const aboutSection = document.querySelector(".about-reveal");
+
+const aboutObserver = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:0.3});
+
+aboutObserver.observe(aboutSection);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SKILLS -->
+<!-- CORE SKILLS -->
+<!-- CORE SKILLS (LINE STYLE) -->
+<!-- ======================= -->
+<!-- SKILLS OVERVIEW -->
+<!-- ======================= -->
+
+<section id="skills" class="skills-section">
+
+<h2 class="skills-title">Skills Overview</h2>
+
+<div class="skills-grid">
+
+<!-- ======================= -->
+<!-- TECHNICAL + NETWORKING -->
+<!-- ======================= -->
+<div class="skill-box">
+
+<h3 class="skill-heading">Technical & Networking Skills</h3>
+
+<div class="skill-grid">
+
+<div class="skill-item">
+<i class="fas fa-network-wired"></i>
+<p>Networking Fundamentals</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-project-diagram"></i>
+<p>IP Addressing & Subnetting</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-random"></i>
+<p>Routing & Switching</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-shield-alt"></i>
+<p>Network Security Basics</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-bug"></i>
+<p>Packet Analysis</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-search"></i>
+<p>Threat Identification</p>
+</div>
+
+</div>
+</div>
+
+<!-- ======================= -->
+<!-- WINDOWS SYSTEM ADMIN -->
+<!-- ======================= -->
+<div class="skill-box">
+
+<h3 class="skill-heading">Windows System Administration</h3>
+
+<div class="skill-grid">
+
+<div class="skill-item">
+<i class="fab fa-windows"></i>
+<p>Windows OS</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-server"></i>
+<p>Windows Server</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-users-cog"></i>
+<p>Active Directory</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-sitemap"></i>
+<p>DNS & DHCP</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-user-lock"></i>
+<p>User & Group Management</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-tools"></i>
+<p>System Troubleshooting</p>
+</div>
+
+</div>
+</div>
+
+<!-- ======================= -->
+<!-- SOFT SKILLS + TOOLS -->
+<!-- ======================= -->
+<div class="skill-box">
+
+<h3 class="skill-heading">Soft Skills & Security Tools</h3>
+
+<div class="skill-grid">
+
+<div class="skill-item">
+<i class="fas fa-users"></i>
+<p>Teamwork</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-comments"></i>
+<p>Communication</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-lightbulb"></i>
+<p>Problem Solving</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-brain"></i>
+<p>Critical Thinking</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-network-wired"></i>
+<p>Wireshark</p>
+</div>
+
+<div class="skill-item">
+<i class="fas fa-laptop-code"></i>
+<p>Packet Tracer</p>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+/* =======================
+   CINEMATIC SKILLS SECTION
+======================= */
+
+.skills-section{
+padding:110px 8%;
+text-align:center;
+overflow:hidden;
+}
+
+.skills-title{
+font-size:40px;
+margin-bottom:80px;
+background:linear-gradient(90deg,#22D3EE,#8B5CF6,#EC4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* MAIN GRID */
+.skill-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+justify-items:center;
+align-items:center;
+opacity:0;
+transform:translateY(20px);
+transition:0.6s ease;
+}
+/* ======================
+   SKILL BOX
+====================== */
+.skill-box{
+background:rgba(18,18,35,0.65);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:22px;
+position:relative;
+overflow:hidden;
+min-height:380px;
+max-width:340px;
+margin:auto;
+transform:translateY(120px);
+opacity:0;
+transition:1s ease;
+
+/* ultra soft edge */
+box-shadow:0 0 40px rgba(139,92,246,0.12) inset;
+}
+
+
+/* when scroll visible */
+.skill-box.show{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+
+/* hover zoom (NO shadow) */
+/* Keep box fixed size */
+.skill-box:hover{
+transform:translateY(0) scale(1);
+}
+
+/* ======================
+   HEADING
+====================== */
+
+.skill-heading{
+font-size:22px;
+margin-bottom:22px;
+color:#fff;
+text-align:center;
+line-height:1.4;
+}
+
+.skill-box:hover .skill-heading{
+letter-spacing:1px;
+}
+
+/* ======================
+   INNER GRID
+====================== */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:50px;
+max-width:1100px;
+margin:auto;
+}
+
+/* show skills on hover */
+.skill-box:hover .skill-grid{
+opacity:1;
+transform:none;
+}
+
+/* ======================
+   SKILL ITEM
+====================== */
+
+.skill-item{
+text-align:center;
+}
+
+.skill-item i{
+font-size:32px;
+background:linear-gradient(135deg,#22D3EE,#8B5CF6,#EC4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+filter:drop-shadow(0 0 10px rgba(139,92,246,0.5));
+margin-bottom:8px;
+transition:0.4s;
+}
+
+.skill-item p{
+color:#e5e7eb;
+font-size:14px;
+}
+
+/* icon animation */
+.skill-item:hover i{
+transform:scale(1.35) rotate(6deg);
+filter:drop-shadow(0 0 18px rgba(139,92,246,0.9));
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media(max-width:768px){
+.skill-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+/* FORCE ALL SKILL BOXES SAME SIZE */
+
+.skill-box{
+height:380px;          /* lock same height */
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+</style>
+
+<script>const skillBoxes = document.querySelectorAll('.skill-box');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{ threshold:0.3 });
+
+skillBoxes.forEach(box => {
+  observer.observe(box);
+});</script>
+<script>
+/* ===== SKILLS CINEMATIC SCROLL ===== */
+
+const skillBoxes = document.querySelectorAll(".skill-box");
+
+const skillObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{ threshold:0.25 });
+
+skillBoxes.forEach(box=>{
+  skillObserver.observe(box);
+});
+</script>
+
+
+
+
+
+
+
+<!-- WORK EXPERIENCE -->
+<!-- =======================
+ EXPERIENCE SECTION
+======================= -->
+
+<section id="experience" class="experience-section">
+
+<h2 class="exp-title">Experience & Practical Learning</h2>
+
+<div class="v-timeline">
+
+  <!-- ITEM 1 -->
+<div class="v-item left reveal-left">
+
+    <span class="v-dot cyan"></span>
+    <div class="v-card">
+      <h3>Cybersecurity Lab Practice</h3>
+      <h4>Self-Learning</h4>
+      <p>
+        Practicing networking labs, packet analysis, and basic security concepts
+        using tools like Wireshark and Packet Tracer.
+      </p>
+    </div>
+  </div>
+
+  <!-- ITEM 2 -->
+<div class="v-item right reveal-right">
+
+    <span class="v-dot purple"></span>
+    <div class="v-card">
+      <h3>Windows Server & Active Directory</h3>
+      <h4>Home Lab</h4>
+      <p>
+        Hands-on experience with Windows Server installation, user management,
+        DNS, DHCP, and Active Directory configuration.
+      </p>
+    </div>
+  </div>
+
+  <!-- ITEM 3 -->
+ <div class="v-item left reveal-left">
+
+    <span class="v-dot pink"></span>
+    <div class="v-card">
+      <h3>Networking Fundamentals</h3>
+      <h4>Training & Practice</h4>
+      <p>
+        Working on IP addressing, subnetting, routing, switching,
+        and troubleshooting small networks.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+
+<style>/* =========================
+ WORK EXPERIENCE SECTION
+========================= */
+/* =======================
+ VERTICAL EXPERIENCE
+======================= */
+
+.experience-section{
+padding:120px 8%;
+text-align:center;
+}
+
+.exp-title{
+font-size:40px;
+margin-bottom:80px;
+background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* TIMELINE WRAPPER */
+.v-timeline{
+position:relative;
+max-width:900px;
+margin:auto;
+}
+
+/* CENTER LINE */
+.v-timeline::before{
+content:"";
+position:absolute;
+left:50%;
+top:0;
+transform:translateX(-50%);
+width:3px;
+height:100%;
+background:linear-gradient(var(--cyan),var(--purple),var(--pink));
+filter:blur(0.5px);
+}
+
+/* ITEM */
+.v-item{
+position:relative;
+width:50%;
+padding:30px 40px;
+}
+
+/* LEFT & RIGHT */
+.v-item.left{
+left:0;
+text-align:right;
+}
+
+.v-item.right{
+left:50%;
+text-align:left;
+}
+
+/* DOT */
+.v-dot{
+position:absolute;
+top:40px;
+width:16px;
+height:16px;
+border-radius:50%;
+box-shadow:0 0 18px currentColor;
+}
+
+.v-item.left .v-dot{
+right:-8px;
+}
+
+.v-item.right .v-dot{
+left:-8px;
+}
+
+.v-dot.cyan{background:var(--cyan);}
+.v-dot.purple{background:var(--purple);}
+.v-dot.pink{background:var(--pink);}
+
+/* CARD */
+.v-card{
+background:rgba(20,20,40,0.75);
+padding:26px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.08);
+display:inline-block;
+max-width:360px;
+transition:0.4s ease;
+}
+
+/* HOVER */
+.v-card:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 0 30px rgba(139,92,246,0.5);
+}
+
+/* TEXT */
+.v-card h3{
+color:#fff;
+margin-bottom:6px;
+}
+
+.v-card h4{
+color:var(--cyan);
+font-size:14px;
+margin-bottom:10px;
+}
+
+.v-card p{
+color:var(--muted);
+font-size:14.5px;
+line-height:1.6;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.v-timeline::before{
+left:10px;
+}
+
+.v-item{
+width:100%;
+padding-left:40px;
+padding-right:0;
+text-align:left;
+}
+
+.v-item.left,
+.v-item.right{
+left:0;
+}
+
+.v-dot{
+left:2px !important;
+}
+
+}
+
+
+
+</style>
+
+<!-- =======================
+ CYBERSECURITY NEWS SLIDER
+======================= -->
+<section id="cyber-news" class="news-section reveal">
+
+<h2 class="news-title">Latest Cybersecurity News</h2>
+
+<div class="carousel-container">
+
+<button class="arrow left" onclick="prevNews()">❮</button>
+
+<div class="carousel">
+
+  <div class="news-card left-card" id="leftCard"></div>
+  <div class="news-card center-card" id="centerCard"></div>
+  <div class="news-card right-card" id="rightCard"></div>
+
+</div>
+
+<button class="arrow right" onclick="nextNews()">❯</button>
+
+</div>
+
+</section>
+
+<style>/* =======================
+ SINGLE NEWS CAROUSEL
+======================= */
+/* =========================
+  LUXURY 3D NEWS CAROUSEL
+========================= */
+
+.news-section{
+padding:130px 8%;
+text-align:center;
+}
+
+.carousel-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:40px;
+margin-top:80px;
+}
+
+/* BASE CARD */
+.news-card{
+width:360px;
+height:320px;
+padding:28px;
+
+border-radius:14px;                 /* soft square */
+background:#0a0a0a;                 /* deep black */
+
+border:1px solid rgba(255,255,255,0.12);  /* light grey line */
+
+color:white;
+transition:0.8s ease;
+
+box-shadow:none;                    /* remove shadow */
+overflow:hidden;
+}
+
+/* CENTER */
+.center-card{
+transform:scale(1.15);
+filter:none;
+opacity:1;
+z-index:5;
+}
+
+/* SIDES */
+.left-card,
+.right-card{
+transform:scale(0.85);
+filter:blur(3px);
+opacity:0.55;
+}
+
+/* POSITIONING */
+.carousel{
+display:flex;
+gap:40px;
+align-items:center;
+}
+
+/* TEXT */
+.news-card h3{
+font-size:18px;
+margin-bottom:12px;
+}
+
+.news-card p{
+font-size:14px;
+line-height:1.6;
+color:#cbd5f5;
+}
+
+.news-card a{
+color:#22D3EE;
+text-decoration:none;
+}
+
+/* ARROWS */
+.arrow{
+width:56px;
+height:56px;
+border-radius:50%;
+border:none;
+cursor:pointer;
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+
+color:#e5e7eb;
+font-size:24px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+box-shadow:none;
+transition:0.35s ease;
+}
+
+/* hover glow */
+.arrow:hover{
+background:rgba(0, 0, 0, 0.25);
+color:#ffffff;
+box-shadow:
+0 0 28px rgba(0, 0, 0, 0.6),
+inset 0 0 14px rgba(255,255,255,0.08);
+transform:scale(1.12);
+}
+
+.arrow:hover{
+transform:scale(1.15);
+box-shadow:0 0 25px #000000;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.left-card,
+.right-card{
+display:none;
+}
+.center-card{
+transform:scale(1);
+}
+}
+</style>
+
+<script>
+const API_KEY = "10709220391647c884cc4934f865bf5b";
+
+let news = [];
+let current = 0;
+
+async function loadNews(){
+const url = `https://newsapi.org/v2/everything?q=cybersecurity&language=en&pageSize=15&sortBy=publishedAt&apiKey=${API_KEY}`;
+const res = await fetch(url);
+const data = await res.json();
+news = data.articles;
+renderCards();
+}
+
+/* RENDER */
+function renderCards(){
+if(news.length === 0) return;
+
+setCard("centerCard", news[current]);
+setCard("leftCard", news[(current-1+news.length)%news.length]);
+setCard("rightCard", news[(current+1)%news.length]);
+}
+
+function setCard(id, item){
+document.getElementById(id).innerHTML = `
+<h3>${item.title}</h3>
+<p>${item.description || "No description available."}</p>
+<a href="${item.url}" target="_blank">Read More →</a>
+`;
+}
+
+/* NAV */
+function nextNews(){
+current = (current + 1) % news.length;
+renderCards();
+}
+
+function prevNews(){
+current = (current - 1 + news.length) % news.length;
+renderCards();
+}
+
+/* LOAD ON SCROLL */
+const newsObserver = new IntersectionObserver(entries=>{
+if(entries[0].isIntersecting){
+loadNews();
+newsObserver.disconnect();
+}
+},{threshold:0.3});
+
+newsObserver.observe(document.querySelector("#cyber-news"));
+</script>
+
+
+
+
+
+
+<!-- PROJECTS -->
+<!-- =======================
+ PROJECTS (LUXURY CARDS)
+======================= -->
+
+<section id="projects" class="projects-section reveal">
+
+<h2 class="projects-title">Featured Projects</h2>
+
+<div class="projects-grid">
+
+<!-- PROJECT 1 -->
+<div class="project-card">
+  <div class="project-img">
+    <img src="images/project-1.png" alt="Project Image">
+  </div>
+
+  <div class="project-content">
+    <h3>Enterprise Network Design & Implementation (DFS)</h3>
+
+    <p>
+Designed a secure, scalable enterprise network for a Digital Financial Services (DFS) organization using Cisco Packet Tracer. 
+Includes VLAN segmentation, OSPF routing, external servers (DNS, Web, Email), centralized DHCP, and IPSec VPN for secure inter-site communication.
+    </p>
+
+    <a href="https://github.com/hk0217/ccna-packet-tracer-labs" 
+       target="_blank" 
+       class="project-btn">
+      View on GitHub
+    </a>
+  </div>
+</div>
+
+<!-- PROJECT 2 -->
+<div class="project-card">
+  <div class="project-img">
+    <img src="images/project-2.webp" alt="Active Directory Lab">
+  </div>
+
+  <div class="project-content">
+    <h3>Active Directory & MCSE Home Lab</h3>
+    <p>
+Designing and documenting AD DS lab with Windows Server.
+Includes domain setup, users & groups, DNS, DHCP, and Group Policy.
+(Notes + Step-by-step lab setup in progress)
+    </p>
+
+        <a href="https://github.com/hk0217/ccna-packet-tracer-labs" 
+       target="_blank" 
+       class="project-btn">
+      View on GitHub
+    </a>
+  </div>
+</div>
+
+<!-- PROJECT 3 -->
+<div class="project-card">
+  <div class="project-img">
+    <img src="images/project-3.webp" alt="Automation & Security Scripting">
+  </div>
+
+  <div class="project-content">
+    <h3>Automation & Security Scripting</h3>
+    <p>
+Working on scripting projects for automation and security tasks.
+Focus on basic Python / Bash scripts for scanning and monitoring.
+(Project under development)
+    </p>
+
+        <a href="https://github.com/hk0217/ccna-packet-tracer-labs" 
+       target="_blank" 
+       class="project-btn">
+      View on GitHub
+    </a>
+  </div>
+</div>
+
+
+</div>
+</section>
+
+<style>/* =======================
+ PROJECTS SECTION
+======================= */
+.project-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  padding:12px 28px;
+  border-radius:14px;
+
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:0.4px;
+
+  color:#ffffff;
+  text-decoration:none;
+
+  background:linear-gradient(135deg,#22D3EE,#8B5CF6,#EC4899);
+  border:1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 8px 22px rgba(139,92,246,0.35),
+    inset 0 0 12px rgba(255,255,255,0.08);
+
+  transition:all 0.35s ease;
+}
+
+/* Hover Effect */
+.project-btn:hover{
+  transform:translateY(-4px) scale(1.05);
+  background:linear-gradient(135deg,#EC4899,#8B5CF6,#22D3EE);
+
+  box-shadow:
+    0 0 25px rgba(236,72,153,0.8),
+    0 0 45px rgba(139,92,246,0.7);
+}
+
+/* Click effect */
+.project-btn:active{
+  transform:scale(0.96);
+}
+
+
+
+
+
+
+
+
+.projects-section{
+padding:120px 8%;
+text-align:center;
+}
+
+.projects-title{
+font-size:42px;
+margin-bottom:80px;
+background:linear-gradient(90deg,#22D3EE,#8B5CF6,#EC4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* GRID */
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+max-width:1100px;
+margin:auto;
+}
+
+/* CARD */
+.project-card{
+background:#0a0a0a;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:18px;
+overflow:hidden;
+transition:0.5s ease;
+display:flex;
+flex-direction:column;
+}
+/* Make card relative */
+.project-card{
+  position:relative;
+}
+
+/* Move button bottom-left */
+.project-btn{
+  position:absolute;
+  bottom:22px;
+  left:22px;
+}
+
+/* IMAGE */
+.project-img img{
+width:100%;
+height:190px;
+object-fit:cover;
+filter:grayscale(20%);
+transition:0.5s ease;
+}
+
+/* CONTENT */
+.project-content{
+  padding:25px;
+  text-align:left;
+  padding-bottom:70px;   /* space for button */
+}
+
+.project-content h3{
+color:#ffffff;
+margin-bottom:10px;
+font-size:20px;
+}
+
+.project-content p{
+color:#cbd5f5;
+font-size:14.5px;
+line-height:1.7;
+margin-bottom:22px;
+}
+
+/* BUTTON */
+.project-btn{
+display:inline-block;
+padding:10px 22px;
+border-radius:10px;
+background:linear-gradient(90deg,#8B5CF6,#EC4899);
+color:white;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
+transition:0.4s ease;
+}
+
+/* HOVER EFFECTS */
+.project-card:hover{
+transform:translateY(-12px);
+}
+
+.project-card:hover img{
+filter:grayscale(0%);
+transform:scale(1.05);
+}
+
+.project-btn:hover{
+box-shadow:0 0 22px rgba(139,92,246,0.7);
+transform:scale(1.05);
+}
+
+</style>
+
+
+<!-- =======================
+ CERTIFICATIONS
+======================= -->
+
+<section id="certifications" class="cert-section reveal">
+
+<h2 class="cert-title">Certifications</h2>
+
+<div class="cert-grid">
+
+<!-- CERT 1 -->
+<div class="cert-card">
+  <img src="images/computer hardware.jpg" alt="Computer Hardware Certificate">
+  <h3>Computer Hardware</h3>
+  <span>Cisco</span>
+  <a href="images/computer hardware.jpg" target="_blank">View Certificate</a>
+</div>
+
+<!-- CERT 2 -->
+<div class="cert-card">
+  <img src="images/cyber attck.jpg" alt="Cyber Attack Certificate">
+  <h3>Cyber Attack Awareness</h3>
+  <span>Udemy</span>
+  <a href="images/cyber attck.jpg" target="_blank">View Certificate</a>
+</div>
+
+
+<!-- CERT 3 -->
+<div class="cert-card">
+  <img src="images/networking.jpg" alt="Networking Certificate">
+  <h3>Introduction To Computer Networking</h3>
+  <span>SimpliLearn</span>
+  <a href="images/networking.jpg" target="_blank">View Certificate</a>
+</div>
+
+<!-- CERT 4 -->
+<div class="cert-card">
+  <img src="images/wireshark.jpg" alt="Wireshark Certificate">
+  <h3>Wireshark Packet Analysis</h3>
+  <span>Udemy</span>
+  <a href="images/wireshark.jpg" target="_blank">View Certificate</a>
+</div>
+
+<!-- CERT 5 -->
+<div class="cert-card">
+  <img src="images/cybersecurity.jpg" alt="Python Certificate">
+  <h3>Python for Cybersecurity</h3>
+  <span>Udemy</span>
+  <a href="images/cybersecurity.jpg" target="_blank">View Certificate</a>
+</div>
+
+<!-- CERT 6 -->
+<div class="cert-card">
+  <img src="images/osint.jpg" alt="OSINT Certificate">
+  <h3>OSINT Fundamentals</h3>
+  <span>Udemy</span>
+  <a href="images/osint.jpg" target="_blank">View Certificate</a>
+</div>
+</div>
+</section>
+
+
+<style>/* =======================
+ CERTIFICATIONS SECTION
+======================= */
+
+.cert-section{
+padding:130px 8%;
+text-align:center;
+background:radial-gradient(circle at top,#000000,#000000);
+}
+
+.cert-title{
+font-size:42px;
+margin-bottom:90px;
+background:linear-gradient(90deg,#22D3EE,#8B5CF6,#EC4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* GRID */
+.cert-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:45px;
+max-width:1100px;
+margin:auto;
+}
+
+/* CARD */
+.cert-card{
+background:rgba(20,20,40,0.65);
+backdrop-filter:blur(12px);
+border-radius:22px;
+padding:28px;
+border:1px solid rgba(255,255,255,0.1);
+transition:0.6s ease;
+position:relative;
+overflow:hidden;
+}
+
+/* IMAGE */
+.cert-card img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:14px;
+margin-bottom:18px;
+filter:grayscale(30%);
+transition:0.5s ease;
+}
+
+/* TEXT */
+.cert-card h3{
+font-size:18px;
+margin-bottom:6px;
+color:#fff;
+}
+
+.cert-card span{
+color:#9ca3af;
+font-size:14px;
+display:block;
+margin-bottom:18px;
+}
+
+/* BUTTON */
+.cert-card a{
+display:inline-block;
+padding:10px 22px;
+border-radius:10px;
+background:linear-gradient(90deg,#8B5CF6,#EC4899);
+color:white;
+text-decoration:none;
+font-size:14px;
+transition:0.4s ease;
+}
+
+/* HOVER EFFECTS */
+.cert-card:hover{
+transform:translateY(-14px) scale(1.02);
+box-shadow:0 0 35px rgba(0, 0, 0, 0.6);
+}
+
+.cert-card:hover img{
+filter:grayscale(0%);
+transform:scale(1.05);
+}
+
+.cert-card a:hover{
+box-shadow:0 0 18px rgba(139,92,246,0.8);
+}</style>
+
+
+<!-- =======================
+ ROADMAP SECTION
+======================= -->
+<!-- =======================
+ ROADMAP SECTION (CURVED ROAD)
+======================= -->
+
+<section id="roadmap" class="roadmap-section reveal">
+
+<h2 class="roadmap-title">My Cybersecurity Journey</h2>
+
+<div class="roadmap-wrapper">
+
+<!-- CURVED ROAD -->
+<svg class="road-svg" viewBox="0 0 1000 300" preserveAspectRatio="none">
+  <path d="M0,150 
+           C150,50 300,250 450,150 
+           C600,50 750,250 1000,150"
+        class="road-path"/>
+</svg>
+
+<!-- POINT 1 -->
+<div class="road-node n1 bottom">
+  <span class="dot"></span>
+  <div class="road-card">
+    <h3>Diploma in Computer Engineering</h3>
+    <p>Built strong foundation in computers & networking.</p>
+  </div>
+</div>
+
+<!-- POINT 2 -->
+<div class="road-node n2 top">
+  <span class="dot"></span>
+  <div class="road-card">
+    <p>Chose cybersecurity with full dedication.</p>
+    <h3>Cybersecurity Calling</h3>
+  </div>
+</div>
+
+<!-- POINT 3 -->
+<div class="road-node n3 bottom">
+  <span class="dot"></span>
+  <div class="road-card">
+    <h3>iForward IT Academy</h3>
+    <p>Started professional training.</p>
+  </div>
+</div>
+
+<!-- POINT 4 -->
+<div class="road-node n4 top">
+  <span class="dot"></span>
+  <div class="road-card">
+    <p>Hardware & troubleshooting.</p>
+    <h3>CompTIA A+</h3>
+  </div>
+</div>
+
+<!-- POINT 5 -->
+<div class="road-node n5 bottom">
+  <span class="dot"></span>
+  <div class="road-card">
+    <h3>CCNA Networking</h3>
+    <p>Routing & switching.</p>
+  </div>
+</div>
+
+<!-- POINT 6 -->
+<div class="road-node n6 top">
+  <span class="dot"></span>
+  <div class="road-card">
+    <p>Windows Server & AD.</p>
+    <h3>MCSE</h3>
+  </div>
+</div>
+
+<!-- POINT 7 -->
+<div class="road-node n7 bottom">
+  <span class="dot"></span>
+  <div class="road-card">
+    <h3>Kali Linux</h3>
+    <p>Currently learning tools.</p>
+  </div>
+</div>
+
+</div>
+</section>
+
+<style>/* =========================
+ ROADMAP CURVED ROAD
+========================= */
+
+.roadmap-section{
+padding:140px 8%;
+background:#05060a;
+text-align:center;
+overflow:hidden;
+}
+
+.roadmap-title{
+font-size:44px;
+margin-bottom:100px;
+background:linear-gradient(90deg,#22D3EE,#8B5CF6,#EC4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* WRAPPER */
+.roadmap-wrapper{
+position:relative;
+max-width:1200px;
+margin:auto;
+height:320px;
+}
+
+/* ROAD */
+.road-svg{
+position:absolute;
+top:50%;
+left:0;
+width:100%;
+height:160px;
+transform:translateY(-50%);
+}
+
+.road-path{
+fill:none;
+stroke:url(#grad);
+stroke:#8B5CF6;
+stroke-width:6;
+stroke-linecap:round;
+filter:drop-shadow(0 0 14px rgba(139,92,246,0.7));
+}
+
+/* NODE */
+.road-node{
+position:absolute;
+text-align:center;
+transform:translate(-50%,-50%);
+}
+
+/* DOT */
+.dot{
+width:18px;
+height:18px;
+background:#ffffff;
+border-radius:50%;
+display:block;
+margin:auto;
+box-shadow:0 0 18px #ffffff;
+}
+
+/* CARD */
+.road-card{
+margin-top:14px;
+background:rgba(20,20,40,0.7);
+padding:16px 18px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,0.15);
+backdrop-filter:blur(8px);
+min-width:180px;
+transition:0.4s ease;
+}
+
+.road-card h3{
+font-size:16px;
+color:#fff;
+margin-bottom:6px;
+}
+
+.road-card p{
+font-size:13px;
+color:#cbd5f5;
+}
+
+/* HOVER */
+.road-node:hover .road-card{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 0 25px rgba(139,92,246,0.7);
+}
+
+/* POSITIONS */
+.n1{left:5%; top:55%;}
+.n2{left:18%; top:35%;}
+.n3{left:33%; top:65%;}
+.n4{left:48%; top:35%;}
+.n5{left:63%; top:65%;}
+.n6{left:78%; top:35%;}
+.n7{left:92%; top:55%;}
+
+/* MOBILE */
+@media(max-width:900px){
+.roadmap-wrapper{
+height:auto;
+}
+
+.road-svg{display:none;}
+
+.road-node{
+position:relative;
+left:auto;
+top:auto;
+transform:none;
+margin-bottom:40px;
+}
+}
+</style>
+
+
+
+
+
+<!-- =======================
+ CONTACT SECTION
+======================= -->
+<section id="contact" class="contact-section reveal">
+
+<h2 class="contact-title">Contact Me</h2>
+
+<button class="contact-btn" onclick="openContact()">Want to Contact Me?</button>
+
+</section>
+
+<!-- CONTACT POPUP -->
+<div id="contactModal" class="contact-modal">
+
+  <div class="contact-box">
+
+    <span class="close-btn" onclick="closeContact()">&times;</span>
+
+    <h3>Get In Touch</h3>
+
+    <p><b>Name:</b> Hetvi Sarvaiya</p>
+    <p><b>Email:</b> hetvi0217@gmail.com</p>
+
+    <div class="contact-links">
+
+      <a href="https://www.linkedin.com/in/yourusername" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+
+      <a href="https://github.com/yourusername" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+</section>
+<style>/* =======================
+ CONTACT SECTION
+======================= */
+
+.contact-section{
+padding:120px 8%;
+text-align:center;
+background:#05060a;
+}
+
+.contact-title{
+font-size:40px;
+margin-bottom:60px;
+background:linear-gradient(90deg,#22D3EE,#8B5CF6,#EC4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* BUTTON */
+.contact-btn{
+padding:16px 40px;
+font-size:18px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+color:white;
+background:linear-gradient(90deg,#8B5CF6,#EC4899);
+transition:0.4s ease;
+}
+
+.contact-btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px #8B5CF6;
+}
+
+/* =======================
+ POPUP
+======================= */
+
+.contact-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:3000;
+}
+
+.contact-box{
+background:rgba(20,20,40,0.9);
+padding:40px;
+border-radius:20px;
+width:90%;
+max-width:420px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 0 40px rgba(139,92,246,0.6);
+}
+
+.contact-box h3{
+margin-bottom:20px;
+font-size:26px;
+color:white;
+}
+
+.contact-box p{
+color:#cbd5f5;
+margin:10px 0;
+}
+
+/* LINKS */
+.contact-links{
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.contact-links a{
+padding:10px 18px;
+border-radius:10px;
+background:#0a0a0a;
+border:1px solid rgba(255,255,255,0.12);
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.contact-links a:hover{
+background:linear-gradient(90deg,#22D3EE,#8B5CF6,#EC4899);
+box-shadow:0 0 20px rgba(139,92,246,0.8);
+transform:scale(1.05);
+}
+
+/* CLOSE */
+.close-btn{
+position:absolute;
+top:15px;
+right:20px;
+font-size:26px;
+cursor:pointer;
+color:white;
+}</style>
+<script>
+function openContact(){
+document.getElementById("contactModal").style.display="flex";
+}
+
+function closeContact(){
+document.getElementById("contactModal").style.display="none";
+}
+</script>
+
+
+
+<footer>
+© 2026 Hetvi Sarvaiya | Aspiring Cybersecurity Analyst
+</footer>
+
+<!-- TYPING -->
+<script>
+const words=["Cybersecurity Analyst","SOC Analyst","Blue Team","Network Security"];
+let i=0,j=0,del=false;
+
+function type(){
+let w=words[i];
+document.getElementById("typing").innerText=w.substring(0,j);
+
+if(!del){
+j++;
+if(j>w.length){del=true;}
+}else{
+j--;
+if(j==0){del=false;i=(i+1)%words.length;}
+}
+setTimeout(type,del?60:120);
+}
+type();
+</script>
+<script>
+function openModal(){
+document.getElementById("aboutModal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("aboutModal").style.display="none";
+}
+</script>
+<script>
+const reveals = document.querySelectorAll(
+".reveal, .reveal-left, .reveal-right"
+);
+
+const scrollObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.2});
+
+reveals.forEach(el=>{
+  scrollObserver.observe(el);
+});
+</script>
+
+</body>
+</html>
